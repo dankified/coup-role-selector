@@ -3,7 +3,10 @@ const http = require('http');
 const port = process.env.PORT || 5000;
 
 const finance = ['Banker', 'Speculator', 'Spy', 'Farmer', 'Capitalist']
-const specialInterest = ['Missionary', 'Foreign Consular', 'Protestor', 'Communist', 'Politician', 'Priest', 'Peacekeeper', 'Lawyer', 'Customs Officer', 'Intellectual']
+const specialInterest = [
+	'Missionary', 'Foreign Consular', 'Protestor', 'Communist', 'Politician', 
+	'Priest', 'Peacekeeper', 'Lawyer', 'Customs Officer', 'Intellectual'
+]
 const communications = ['Newscaster','Reporter','Writer', 'Director', 'Producer']
 const force = ['Judge', 'Mercenary', 'General', 'Guerrilla', 'Crime Boss']
 
