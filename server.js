@@ -1,4 +1,5 @@
 const http = require('http');
+const staticHandler = require('./handlers/staticHandler');
 
 const port = process.env.PORT || 5000;
 
@@ -27,7 +28,17 @@ function buildRoster() {
 }
 
 const server = http.createServer((req, res) => {
-		res.end(JSON.stringify(buildRoster()));
+		switch(req.url) {
+			case '/': {
+				staticHandler(req, res, req.url);
+				break;
+			} case '/roster': {
+				res.end(JSON.stringify(buildRoster()));
+				break;
+			} default: {
+				res.end({404: 'Handler not found'});
+			}
+		}
 	}
 );
 
