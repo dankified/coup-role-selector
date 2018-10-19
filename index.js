@@ -18,8 +18,9 @@ function buildRoster() {
 
 	let roster = {};
 	roster['Special Interest'] = pickRandom(specialInterest);
-	let categories = ['Finance', 'Special Interests 2', 'Communications', 'Force'];
-	[finance, specialInterest, communications, force].forEach((el, i) => {
+	roster['Special Interest 2'] = pickRandom(specialInterest);
+	let categories = ['Finance', 'Communications', 'Force'];
+	[finance, communications, force].forEach((el, i) => {
 		roster[categories[i]] = pickRandom(el);
 	});
 	return roster;
