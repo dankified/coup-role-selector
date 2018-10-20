@@ -10,22 +10,23 @@
   padding: 1rem;
   height: 20vh;
   font-size: 4rem;
+  font-weight: 900;
   border: 1px solid black;
 }
 
 .Special {
   color: brown;
-  background-color: lightcoral;
+  background-color: #fdb42d
 }
 
 .Finance {
-  color: yellow;
-  background-color: gainsboro;
+  color: lime;
+  background-color: gray;
 }
 
 .Communications {
-  color: blue;
-  background-color: darkcyan
+  color: cyan;
+  background-color: #004080
 }
 
 .Force {
