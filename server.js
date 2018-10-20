@@ -17,7 +17,6 @@ const server = http.createServer((req, res) => {
       res.end(JSON.stringify(buildRoster()));
       break;
     default: {
-      console.log(parsedUrl.query)
       res.writeHead(404, 'Not a valid endpoint');
       res.end();
     }
