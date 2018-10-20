@@ -2,5 +2,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 65%;
   font-family: 'Courier New', Courier, monospace;
+}
+
+.role {
+  padding: 1rem;
+  height: 20vh;
+  font-size: 10rem;
+  border: 1px solid black;
+}
+
+.Special {
+  color: brown;
+  background-color: lightcoral;
+}
+
+.Finance {
+  color: yellow;
+  background-color: gainsboro;
+}
+
+.Communications {
+  color: blue;
+  background-color: darkcyan
+}
+
+.Force {
+  color: gainsboro;
+  background-color: black;
 }
