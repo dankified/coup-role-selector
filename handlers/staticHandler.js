@@ -12,15 +12,15 @@ const serveStaticFiles = require('../utils/serveStaticFiles');
 function staticHandler(req, res, path) {
 	switch(path.query) {
 		case null: {
-      serveStaticFiles(res, __dirname + '/../index.html');
+      serveStaticFiles(res, __dirname + '/../public/index.html');
       break;
     }
     case 'css=true': {
-      serveStaticFiles(res, __dirname + '/../styles.css', 'text/css');
+      serveStaticFiles(res, __dirname + '/../public/styles.css', 'text/css');
       break;
     }
     case 'js=true': {
-      serveStaticFiles(res, __dirname + '/../index.js', 'application/javascript');
+      serveStaticFiles(res, __dirname + '/../public/index.js', 'application/javascript');
       break;
     }
     default: {
