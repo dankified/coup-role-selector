@@ -19,7 +19,6 @@ function buildRoster() {
 	]
 	const communications = ['Newscaster','Reporter','Writer', 'Director', 'Producer']
 	const force = ['Judge', 'Mercenary', 'General', 'Guerrilla', 'Crime Boss']
-
 	let roster = {};
 	roster['Special Interest'] = pickRandom(specialInterest);
 	roster['Special Interest 2'] = pickRandom(specialInterest);

@@ -2,7 +2,7 @@
   const request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
-      alert("Shit be good!");
+      alert(this.responseText);
     }
   };
   request.open('GET', '/roster', true);

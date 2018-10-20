@@ -1,38 +1,7 @@
-const fs = require('fs');
-
+const serveStaticFiles = require('../utils/serveStaticFiles');
 /**
- * Serve an html file
- * @param {Object} req - node request object
- * @param {Object} res - node response object
+ * TODO: Remove static file handlers from this file and import the new serveStaticFiles util
  */
-function htmlFile(req, res) {
-  fs.readFile(__dirname + '/../index.html', 'utf8', (err, data) => {
-    if(err) {
-      res.writeHead(500, "Could not read file");
-      res.end();
-    } else {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.end(data, 'utf8');
-    }
-  }); 	
-}
-
-/**
- * Serve a CSS file
- * @param {Object} req - node request object
- * @param {Object} res - node response object
- */
-function cssFile(req, res) {
-  fs.readFile(__dirname + '/../styles.css', 'utf8', (err, data) => {
-    if(err) {
-      res.writeHead(500, "Could not read file"); 
-      res.end();
-    } else {
-      res.writeHead(200, {'Content-Type': 'text/css'});
-      res.end(data);
-    }
-  })
-}
 
 /**
  * 
@@ -43,11 +12,15 @@ function cssFile(req, res) {
 function staticHandler(req, res, path) {
 	switch(path.query) {
 		case null: {
-      htmlFile(req, res);
+      serveStaticFiles(res, __dirname + '/../index.html');
       break;
     }
     case 'css=true': {
-      cssFile(req, res);
+      serveStaticFiles(res, __dirname + '/../styles.css', 'text/css');
+      break;
+    }
+    case 'js=true': {
+      serveStaticFiles(res, __dirname + '/../index.js', 'application/javascript');
       break;
     }
     default: {
