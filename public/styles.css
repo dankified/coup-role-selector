@@ -9,11 +9,12 @@
 body {
   font-weight: 900;
   overflow-y: hidden;
+  background-color: black;
 }
 
 .role {
   font-size: 4rem;
-  height: 19vh;
+  height: 18vh;
   border: 1px solid black;
 }
 
