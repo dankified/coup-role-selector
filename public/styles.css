@@ -6,11 +6,14 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-.role {
-  padding: 1rem;
-  height: 20vh;
-  font-size: 4rem;
+body {
   font-weight: 900;
+  overflow-y: hidden;
+}
+
+.role {
+  font-size: 4rem;
+  height: 19vh;
   border: 1px solid black;
 }
 
@@ -32,4 +35,11 @@
 .Force {
   color: gainsboro;
   background-color: black;
+}
+
+#new-roster {
+  font-size: 3.5rem;
+  width: 100vw;
+  height: 5vh;
+  font-weight: 900;
 }

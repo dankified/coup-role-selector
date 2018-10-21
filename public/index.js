@@ -1,5 +1,6 @@
-function createSectionForEachRole(roster) {
+function populateRoster(roster) {
   const root = document.getElementById('root');
+  while(root.firstChild) root.removeChild(root.firstChild);
   for(let role in roster) {
     const div = document.createElement('DIV');
     div.classList.add('role');
@@ -12,14 +13,21 @@ function createSectionForEachRole(roster) {
   }
 }
 
-(function() {
+function fetchRoster() {
   const request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
       const roster = JSON.parse(this.responseText);
-      createSectionForEachRole(roster);
+      populateRoster(roster);
     }
   };
   request.open('GET', '/roster', true);
   request.send();
+};
+
+(function() {
+  fetchRoster();
+  document.getElementById('new-roster').addEventListener('click', () => {
+    fetchRoster();
+  });
 }());
